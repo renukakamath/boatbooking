@@ -1,0 +1,200 @@
+{% include 'staffheader.html'%}
+
+<style>
+    body{
+        background: white;
+    }
+</style>
+<center>
+    <div style="width: 100%;height: 130vh;padding-top:5px;"> 
+                 <center>
+
+<form method="post" class="bx" enctype="multipart/form-data"  >
+
+	<h1 class="text-white">Manage boat</h1>
+	{% if data['boatupdate']%}
+
+	<table class="table" style="width:500px">
+
+
+		<tr>
+			<th class="cat_name">Category</th>
+			<td ><select name="cat" class="form-control" required="">
+				
+
+				<option value="{{data['boatupdate'][0]['category_id'] }}">{{data['boatupdate'][0]['category_name'] }}</option>
+
+				<option>Select</option>
+				{%for row in data['categorydrop']%}
+                  	<option value="{{row['category_id']}}">{{row['category_name'] }}</option>
+                 {% endfor %}
+			</select></td>
+		</tr>
+		<tr>
+			<th class="cat_name">SubCategory</th>
+			<td><select name="subcategory" class="form-control">
+				<option value="{{data['boatupdate'][0]['subcategory_id'] }}">{{data['boatupdate'][0]['subcategory_name'] }}</option>
+
+				<option>Select</option>
+
+				{% for row in data['subcategorydrop']%}
+				
+					<option value="{{row['subcategory_id']}}">{{row['subcategory_name']}}</option>
+			    {% endfor %}
+			</select></td>
+		</tr>
+
+			<tr>
+			<th class="cat_name">Rate</th>
+			<td><input type="number" required="" class="form-control" value="{{data['boatupdate'][0]['price']}}" name="rate"></td>
+		</tr>
+		<tr>
+			<th class="cat_name"> Image</th>
+			<td><input type="file" required="" class="form-control" value="{{data['boatupdate'][0]['image'] }}" name="imgg"></td>
+		</tr>
+		
+	
+		
+
+		<td align="center" colspan="2"><input type="submit" name="update" value="submit" class="btn btn-success"></td>
+	</table>
+{% else %}
+	<table class="table" style="width:500px">
+
+	
+		<tr>
+			<th class="cat_name">Category</th>
+			<td><select name="cat" class="form-control" required="">
+				
+
+				
+
+				<option>Select</option>
+				{%for row in data['categorydrop']%}
+                  	<option value="{{row['category_id']}}">{{row['category_name'] }}</option>
+                 {% endfor %}
+			</select></td>
+		</tr>
+		<tr>
+			<th class="cat_name">SubCategory</th>
+			<td><select name="subcategory" class="form-control">
+			
+				<option>Select</option>
+
+				{% for row in data['subcategorydrop']%}
+				
+					<option value="{{row['subcategory_id']}}">{{row['subcategory_name']}}</option>
+			    {% endfor %}
+			</select></td>
+		</tr>
+
+			<tr>
+			<th class="cat_name">Rate</th>
+			<td><input type="number" required="" class="form-control"  name="rate"></td>
+		</tr>
+		<tr>
+			<th class="cat_name"> Image</th>
+			<td><input type="file" required="" class="form-control"  name="imgg"></td>
+		</tr>
+		
+		<tr>
+			<th class="cat_name">Duration</th>
+			<td><input type="text" name="dis" value="1" readonly="" required="" class="form-control"></td>
+		</tr>
+	
+
+		<td align="center" colspan="2"><input type="submit" name="boat" value="submit" class="btn btn-success"></td>
+	</table>
+{% endif %}
+</form>
+</center>
+
+</div></center>
+
+<center>
+	<h1>view boat</h1>
+	<form>
+		<table class="table" style="width: 500px;">
+			<tr>
+				<th>sino</th>
+				<th>category</th>
+				<th>SubCategory</th>
+				<th>Rate</th>
+				<th> Image</th>
+				<th>Duration</th>
+				
+				
+				
+			</tr>
+			{% for row in data['boatview']%}
+    	<tr>
+    		<td>{{loop.index}}</td>
+    		<td>{{row['category_name']}}</td>
+    		<td>{{row['subcategory_name'] }}</td>
+    		<td>{{row['price']}}</td>
+    		
+    		<td><img src="/{{row['image'] }}" height="100" width="100"></td>
+    		<td>{{row['duration'] }}</td>
+    		
+    		
+    	{% if row['bstatus']=="1"%}
+              
+              	<td><a class="btn btn-success" href="?action=notavailable&bid={{row['boat_id']}}">Not Available</a></td>
+         {% elif row['bstatus']=="0"%}
+
+         	<td><a class="btn btn-success" href="?action=available&bid={{row['boat_id']}}"> Available</a></td>
+       {% endif %}
+                   <td><a class="btn btn-success" href="admin_viewrating?bid={{row['boat_id']}}">View Rating</a></td>
+    		 	<td><a class="btn btn-success" href="?action=update&bid={{row['boat_id']}}">update</a></td>
+    		 	
+    		
+    	</tr>
+    	{% endfor %}
+   
+		</table>
+	</form>
+</center>
+
+</div></center>
+
+
+<style>
+    .lg-main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100% !important;
+        /* margin-bottom: 2rem; */
+        width: 50%;
+        position: relative;
+        left: 350px;
+        padding: 2rem 0px;
+
+    }
+   
+    .bx{
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        margin-top: 200px;
+        border-radius: 20px;
+        width: 60%;
+        padding: 10px 40px;
+        margin-bottom: 100px;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    h1{
+        color: black;
+    }
+    body{
+        background-image: url("/static/assets/images/b2.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 130vh;
+    }
+    .name{
+        color: aliceblue;
+    }
+</style>
+
+
+{% include 'footer.html'%}

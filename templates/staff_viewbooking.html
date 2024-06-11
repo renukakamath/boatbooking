@@ -1,0 +1,48 @@
+{% include 'staffheader.html'%}
+<body style="background: url(/static/assets/images/1.jpg);">  
+       <div style="margin-top: 100px"> 
+       	</div></body>
+<center>
+	<h1>view Bookings</h1>
+	<form>
+		<table class="table" style="width: 500px">
+			<tr>
+				<th>sino</th>
+				<th> Customer Name</th>
+				<th>category</th>
+				<th>SubCategory</th>
+				
+				
+				
+				<th>Duration</th>
+				<th> Image</th>
+				<th> price</th>
+				
+				<th>Status</th>
+				
+				
+			</tr>
+			{% for row in data['bookingview']%}
+    	<tr>
+    		<td>{{loop.index}}</td>
+    		<td>{{row['customer_fname']}}</td>
+    		<td>{{row['category_name']}}</td>
+    		<td>{{row['subcategory_name'] }}</td>
+    		
+    		<td>{{row['hours'] }}</td>
+    		<td><img src="/{{row['image'] }}" height="100" width="100"></td>
+    		<td>{{row['price']}}</td>
+    		
+    	
+    		<td>{{row['bstatus']}}</td>
+    		<td><a href="staff_viewpayment?bid={{row['booking_id']}}">View Payment</a></td>
+    		
+   
+    		
+    	</tr>
+    	{% endfor %}
+   
+		</table>
+	</form>
+</center>
+{% include 'footer.html'%}

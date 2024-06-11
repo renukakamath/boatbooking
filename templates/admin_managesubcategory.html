@@ -1,0 +1,128 @@
+{% include 'adminheader.html'%}
+<style>
+    body{
+        background: white;
+    }
+</style>
+<center>
+    <div style="width: 100%;height: 100vh;padding-top: 10px;">
+
+<form class="bx"  method="post">
+
+	<h1 class="text-white">Manage Subcategory </h1>
+	{% if data['subcategoryupdate']%}
+	<table class="table" style="width:500px;color: white">
+		
+		
+		<tr>
+			<th>Name</th>
+			<td><input type="text" required="" class="form-control" value="{{data['subcategoryupdate'][0]['subcategory_name']}}" name="fname"></td>
+		</tr>
+		
+	
+		
+		
+		<td align="center" colspan="2"><input type="submit" name="update" value="submit" class="btn btn-success"></td>
+	</table>
+{% else %}
+	<table class="table" style="width:500px;color: white">
+
+		
+		<tr>
+			<th>Name</th>
+			<td><input type="text" required="" class="form-control" name="fname"></td>
+		</tr>
+		
+	
+		
+		<td align="center" colspan="2"><input type="submit" name="subcategory" value="submit" class="btn btn-success"></td>
+	</table>
+{% endif %}
+</form>
+</center>
+</div></center>
+<center>
+	<h1>view Subcategory</h1>
+	<form>
+		<table class="table" style="width: 500px">
+			<tr>
+				<th>sino</th>
+				
+				<th>Name</th>
+				
+				
+				
+			</tr>
+			{% for row in data['subview']%}
+    	<tr>
+    		<td>{{loop.index}}</td>
+    		
+    		<td>{{row['subcategory_name']}}</td>
+    	
+
+    	      {% if row['sub_status']=="1"%}
+
+            <td><a class="btn btn-success" href="?action=inactive&sid={{row['subcategory_id']}}">InActive</a></td>
+
+            {% elif row['sub_status']=="0"%}
+           
+
+    		
+    			<td><a class="btn btn-success" href="?action=active&sid={{row['subcategory_id']}}">Active</a></td>
+    	{% endif %}
+    		
+    		
+    		<td><a class="btn btn-success" href="?action=update&sid={{row['subcategory_id']}}">update</a></td>
+    		
+
+
+    	</tr>
+    	{% endfor %}
+    	
+   
+		</table>
+	</form>
+</center>
+
+
+</div></center>
+
+
+<style>
+    .lg-main{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100% !important;
+        /* margin-bottom: 2rem; */
+        width: 50%;
+        position: relative;
+        left: 350px;
+        padding: 2rem 0px;
+
+    }
+   
+    .bx{
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+        margin-top: 200px;
+        border-radius: 20px;
+        width: 60%;
+        padding: 10px 40px;
+        margin-bottom: 100px;
+        background-color: rgba(0, 0, 0, 0.3);
+    }
+    h1{
+        color: black;
+    }
+    body{
+        background-image: url("/static/assets/images/b2.jpg");
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 100vh;
+    }
+    .name{
+        color: aliceblue;
+    }
+</style>
+{% include 'footer.html'%}

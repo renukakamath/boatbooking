@@ -1,0 +1,54 @@
+
+<script> 
+    function printDiv() { 
+      var divContents = document.getElementById("div_print").innerHTML; 
+      var a = window.open('', '', 'height=500, width=500'); 
+      a.document.write(divContents); 
+      a.document.close(); 
+      a.print(); 
+    } 
+  </script> 
+<body onload="printDiv()">
+  <div id="div_print" >
+<center>
+  
+<h1 style="padding-top: 30px;font-size: 60px">Sales Report</h1>
+
+<!-- <h1>View Sales</h1> -->
+<table class="table" style="width: 1000px;color: black;font-style: italic;font-family: monospace;font-size: 22px" border="5">
+		<tr>
+  <tr>
+        <th>sino</th>
+        <th> Customer Name</th>
+        <th>category</th>
+        <th>SubCategory</th>
+        
+        
+        
+        <th>Duration</th>
+        <th> Image</th>
+        <th> price</th>
+        
+        <th>Status</th>
+        
+        
+      </tr>
+      {% for row in data['r']%}
+      <tr>
+        <td>{{loop.index}}</td>
+        <td>{{row['customer_fname']}}</td>
+        <td>{{row['category_name']}}</td>
+        <td>{{row['subcategory_name'] }}</td>
+        
+        <td>{{row['duration'] }}</td>
+        <td><img src="/{{row['image'] }}" height="100" width="100"></td>
+        <td>{{row['price']}}</td>
+        
+      
+        <td>{{row['bstatus']}}</td>
+      
+     
+    </tr>
+     {% endfor %}
+	</table>
+</center>

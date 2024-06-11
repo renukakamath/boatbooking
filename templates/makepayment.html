@@ -1,0 +1,31 @@
+{% include 'customerheader.html'%}
+<center>
+	<h1>Make Payment</h1>
+	<form method="post">
+		<table>
+		<tr>
+			<th>
+				card Number
+			</th>
+			<td><select name="cardno">
+				<option>---Select---</option>
+				{% for row in data['carddrop']%}
+				<option value="{{data['carddrop'][0]['card_id']}}">{{data['carddrop'][0]['card_no']}}</option>
+				{% endfor %}
+			</select></td>
+			<td><a href="customer_addcard">Add Card</a></td>
+		</tr>
+
+		<tr>
+			<th>C V V </th>
+			<td><input type="text" name="cvv"></td>
+		</tr>
+		<tr>
+			<th>Amount</th>
+			<td><input type="text" value="{{data['price']}}" name="amo"></td>
+		</tr>
+		<td><input type="submit" name="makepayment"></td>
+	</table>
+	</form>
+</center>
+{% include 'footer.html'%}

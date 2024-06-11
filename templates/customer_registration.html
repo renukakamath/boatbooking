@@ -1,0 +1,131 @@
+{% include 'publicheader.html' %}
+<!-- <center>
+<h1>Customer Registration</h1>
+<form method="post" style="" class="ppp">
+	<table class="table" style="width:500px">
+		<tr>
+			<th>First Name</th>
+			<td><input type="text" required="" class="form-control" name="fname"></td>
+		</tr>
+		<tr>
+			<th>Last Name</th>
+			<td><input type="text" required="" class="form-control" name="lname"></td>
+		</tr>
+
+		<tr>
+			<th>House Name:</th>
+			<td><input type="text" required="" class="form-control" name="hno"></td>
+		</tr>
+
+		
+		<tr>
+			<th>District</th>
+			<td><input type="text" required="" class="form-control" name="district"></td>
+		</tr>
+	
+			
+		<tr>
+			<th>Pincode</th>
+			<td><input type="text" required="" pattern="[0-9]{6}" class="form-control" name="pin"></td>
+		</tr>
+
+
+		
+
+		<tr>
+			<th>Phone</th>
+			<td><input type="text" required="" pattern="[0-9]{10}" class="form-control" name="num"></td>
+		</tr>
+		
+		
+		
+	
+	
+		<tr>
+			<th>User Name</th>
+			<td><input type="email" required="" class="form-control"  name="uname"></td>
+		</tr>
+		<tr>
+			<th>Password</th>
+			<td><input type="password" required="" class="form-control" name="pwd"></td>
+		</tr>
+		<td align="center" colspan="2"><input type="submit" name="cusreg" value="submit" class="btn btn-success"></td>
+	</table>
+</form>
+</center> -->
+
+
+<section class="w3l-call-to-action_9" style="height: 700px;background: url(static/assets/images/1.jpg);color: black;background-size: cover;backdrop-filter: blur(5px);">
+    <div class="call-w3">
+        <div class="container">
+            <div class="booking-form-content">
+                <div class="main-titles-head ">
+                <h3 class="header-name">Customer Registration
+                </h3>
+                <!-- <p class="tiltle-para editContent ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Hic fuga sit illo modi aut aspernatur tempore laboriosam saepe dolores eveniet.</p> -->
+            </div>
+                <form action="search-results.html" method="post" class="booking-form">
+                    <div class="row book-form">
+                        <div class="form-input col-md-4">
+                            <label>First Name</label>
+                            <input type="text" name="" placeholder="First Name" required="">
+                        </div>
+
+                        <div class="form-input col-md-4">
+                            <label>Last Name</label>
+                            <input type="text" name="" placeholder="Last Name" required="">
+                        </div>
+                        <div class="form-input col-md-4">
+                            <label>House Name</label>
+                            <input type="text" name="" placeholder="House Name" required="">
+                        </div>
+                      
+                        <div class="form-input col-md-4">
+                            <label>District</label>
+                            <select name="district" class="selectpicker">
+                                <option value="Thiruvananthapuram">Thiruvananthapuram</option>
+                                <option value="Kollam">Kollam</option>
+                                <option value="Pathanamthitta">Pathanamthitta</option>
+                                <option value="Alappuzha">Alappuzha</option>
+                                <option value="Kollam">Kollam</option>
+                                <option value="Idukki">Idukki</option>
+                                <option value="Ernakulam">Ernakulam</option>
+                                 <option value="Thrissur">Thrissur</option>
+                                  <option value="Palakkad">Palakkad</option>
+                                  <option value="	Malappuram">	Malappuram</option>
+                                   <option value="Kozhikode">Kozhikode</option>
+                                   <option value="Wayanad">Wayanad</option>
+                                    <option value="Kannur">Kannur</option>
+                                     <option value="Kasaragod">Kasaragod</option>
+                            </select>
+
+                        </div>
+                <div class="form-input col-md-4">
+                            <label>Pincode</label>
+                            <input type="number"  placeholder="Pincode" pattern="[0-9]{6}"name="pin" required="">
+                        </div>
+
+                          <div class="form-input col-md-4">
+                            <label>Phone</label>
+                            <input type="number"  placeholder="Phone" pattern="[0-9]{10}"name="num" required="">
+                        </div>
+                        <div class="form-input col-md-4">
+                            <label>User Name</label>
+                            <input type="text" name="uname" placeholder="User Name" required="">
+                        </div>
+
+                        <div class="form-input col-md-4">
+                            <label>Password</label>
+                            <input type="text" name="pwd" placeholder="Password" required="">
+                        </div>
+                        <div class="bottom-btn col-md-4 mt-3">
+                            <label>Submit</label>
+                            <button class="btn btn-style btn-primary w-100 btn-style">Submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% include 'footer.html'%}
