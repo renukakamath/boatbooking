@@ -1,12 +1,12 @@
 import mysql.connector
 
-user="root"
-password=""
-database="online_boat_reservation"
+user="sql12725158"
+password="4x1xSVlIPb"
+database="sql12725158"
 
 
 def select(q):
-	con=mysql.connector.connect(user=user,password=password,host="localhost",database=database)
+	con=mysql.connector.connect(user=user,password=password,host="sql12.freesqldatabase.com",database=database)
 	cur=con.cursor(dictionary=True)
 	cur.execute(q)
 	result=cur.fetchall()
@@ -15,7 +15,7 @@ def select(q):
 	return result
 
 def insert(q):
-	con=mysql.connector.connect(user=user,password=password,host="localhost",database=database)
+	con=mysql.connector.connect(user=user,password=password,host="sql12.freesqldatabase.com",database=database)
 	cur=con.cursor(dictionary=True)
 	cur.execute(q)
 	con.commit()
@@ -25,7 +25,7 @@ def insert(q):
 	return result
 
 def update(q):
-	con=mysql.connector.connect(user=user,password=password,host="localhost",database=database)
+	con=mysql.connector.connect(user=user,password=password,host="sql12.freesqldatabase.com",database=database)
 	cur=con.cursor(dictionary=True)
 	cur.execute(q)
 	con.commit()
@@ -34,7 +34,7 @@ def update(q):
 	con.close()
 
 def delete(q):
-	con=mysql.connector.connect(user=user,password=password,host="localhost",database=database)
+	con=mysql.connector.connect(user=user,password=password,host="sql12.freesqldatabase.com",database=database)
 	cur=con.cursor(dictionary=True)
 	cur.execute(q)
 	con.commit()

@@ -15,5 +15,5 @@ app.register_blueprint(customer,url_prefix='/customer')
 app.register_blueprint(staff,url_prefix='/staff')
 
 
-
-app.run(debug=True,port=5025)
+if __name__ == '__main__':
+    app.run(debug=True)

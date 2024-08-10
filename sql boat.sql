@@ -1,6 +1,6 @@
 /*
 SQLyog Community v13.1.6 (64 bit)
-MySQL - 5.7.9 : Database - online_boat_reservation
+MySQL - 5.7.9 : Database - sql12725158
 *********************************************************************
 */
 
@@ -12,9 +12,9 @@ MySQL - 5.7.9 : Database - online_boat_reservation
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
-CREATE DATABASE /*!32312 IF NOT EXISTS*/`online_boat_reservation` /*!40100 DEFAULT CHARACTER SET latin1 */;
+CREATE DATABASE /*!32312 IF NOT EXISTS*/`sql12725158` /*!40100 DEFAULT CHARACTER SET latin1 */;
 
-USE `online_boat_reservation`;
+USE `sql12725158`;
 
 /*Table structure for table `boat` */
 
